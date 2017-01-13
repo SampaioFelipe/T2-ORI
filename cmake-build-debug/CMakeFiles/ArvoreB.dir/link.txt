@@ -1,0 +1,1 @@
+/usr/bin/cc  -g   CMakeFiles/ArvoreB.dir/main.c.o CMakeFiles/ArvoreB.dir/ArvoreB.c.o  -o ArvoreB 
