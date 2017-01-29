@@ -1,10 +1,10 @@
 #include "ArvoreB.h"
 
 void cria(Node **r, int grau) {
-    //(*r)->grauMinimo = grau; // Metade da capacidade do nó (quantidade de chaves)
+    (*r)->grauMinimo = grau; // Metade da capacidade do nó (quantidade de chaves)
     int nChaves = 2 * grau; // Numero máximo de chaves
-    //(*r)->chaves = (int *) malloc(sizeof(int) * nChaves);
-    //(*r)->filhos = (Node **) malloc(sizeof(Node *) * (nChaves + 1));
+    (*r)->chaves = (int *) malloc(sizeof(int) * nChaves);
+    (*r)->filhos = (Node **) malloc(sizeof(Node *) * (nChaves + 1));
     (*r)->qtdChavesAtual = 0;
     (*r)->eFolha = 1;
 }
