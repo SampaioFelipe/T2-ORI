@@ -4,5 +4,6 @@
 CMakeFiles/ArvoreB.dir/ArvoreB.c.o: ../ArvoreB.c
 CMakeFiles/ArvoreB.dir/ArvoreB.c.o: ../ArvoreB.h
 
+CMakeFiles/ArvoreB.dir/main.c.o: ../ArvoreB.h
 CMakeFiles/ArvoreB.dir/main.c.o: ../main.c
 

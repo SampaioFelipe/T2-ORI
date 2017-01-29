@@ -34,19 +34,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /usr/local/src/clion-2016.3/bin/cmake/bin/cmake
+CMAKE_COMMAND = /home/gabriela/clion-2016.3.2/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /usr/local/src/clion-2016.3/bin/cmake/bin/cmake -E remove -f
+RM = /home/gabriela/clion-2016.3.2/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/felipe/Documents/git/T2
+CMAKE_SOURCE_DIR = /home/gabriela/T2-ORI/T2-ORI
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/felipe/Documents/git/T2/cmake-build-debug
+CMAKE_BINARY_DIR = /home/gabriela/T2-ORI/T2-ORI/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/ArvoreB.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/ArvoreB.dir/flags.make
 
 CMakeFiles/ArvoreB.dir/main.c.o: CMakeFiles/ArvoreB.dir/flags.make
 CMakeFiles/ArvoreB.dir/main.c.o: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/felipe/Documents/git/T2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/ArvoreB.dir/main.c.o"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ArvoreB.dir/main.c.o   -c /home/felipe/Documents/git/T2/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gabriela/T2-ORI/T2-ORI/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/ArvoreB.dir/main.c.o"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ArvoreB.dir/main.c.o   -c /home/gabriela/T2-ORI/T2-ORI/main.c
 
 CMakeFiles/ArvoreB.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ArvoreB.dir/main.c.i"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/felipe/Documents/git/T2/main.c > CMakeFiles/ArvoreB.dir/main.c.i
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/gabriela/T2-ORI/T2-ORI/main.c > CMakeFiles/ArvoreB.dir/main.c.i
 
 CMakeFiles/ArvoreB.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ArvoreB.dir/main.c.s"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/felipe/Documents/git/T2/main.c -o CMakeFiles/ArvoreB.dir/main.c.s
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/gabriela/T2-ORI/T2-ORI/main.c -o CMakeFiles/ArvoreB.dir/main.c.s
 
 CMakeFiles/ArvoreB.dir/main.c.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/ArvoreB.dir/main.c.o.provides.build: CMakeFiles/ArvoreB.dir/main.c.o
 
 CMakeFiles/ArvoreB.dir/ArvoreB.c.o: CMakeFiles/ArvoreB.dir/flags.make
 CMakeFiles/ArvoreB.dir/ArvoreB.c.o: ../ArvoreB.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/felipe/Documents/git/T2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/ArvoreB.dir/ArvoreB.c.o"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ArvoreB.dir/ArvoreB.c.o   -c /home/felipe/Documents/git/T2/ArvoreB.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gabriela/T2-ORI/T2-ORI/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/ArvoreB.dir/ArvoreB.c.o"
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ArvoreB.dir/ArvoreB.c.o   -c /home/gabriela/T2-ORI/T2-ORI/ArvoreB.c
 
 CMakeFiles/ArvoreB.dir/ArvoreB.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ArvoreB.dir/ArvoreB.c.i"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/felipe/Documents/git/T2/ArvoreB.c > CMakeFiles/ArvoreB.dir/ArvoreB.c.i
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/gabriela/T2-ORI/T2-ORI/ArvoreB.c > CMakeFiles/ArvoreB.dir/ArvoreB.c.i
 
 CMakeFiles/ArvoreB.dir/ArvoreB.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ArvoreB.dir/ArvoreB.c.s"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/felipe/Documents/git/T2/ArvoreB.c -o CMakeFiles/ArvoreB.dir/ArvoreB.c.s
+	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/gabriela/T2-ORI/T2-ORI/ArvoreB.c -o CMakeFiles/ArvoreB.dir/ArvoreB.c.s
 
 CMakeFiles/ArvoreB.dir/ArvoreB.c.o.requires:
 
@@ -117,7 +117,7 @@ ArvoreB: CMakeFiles/ArvoreB.dir/main.c.o
 ArvoreB: CMakeFiles/ArvoreB.dir/ArvoreB.c.o
 ArvoreB: CMakeFiles/ArvoreB.dir/build.make
 ArvoreB: CMakeFiles/ArvoreB.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/felipe/Documents/git/T2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable ArvoreB"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/gabriela/T2-ORI/T2-ORI/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable ArvoreB"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ArvoreB.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -135,6 +135,6 @@ CMakeFiles/ArvoreB.dir/clean:
 .PHONY : CMakeFiles/ArvoreB.dir/clean
 
 CMakeFiles/ArvoreB.dir/depend:
-	cd /home/felipe/Documents/git/T2/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/felipe/Documents/git/T2 /home/felipe/Documents/git/T2 /home/felipe/Documents/git/T2/cmake-build-debug /home/felipe/Documents/git/T2/cmake-build-debug /home/felipe/Documents/git/T2/cmake-build-debug/CMakeFiles/ArvoreB.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/gabriela/T2-ORI/T2-ORI/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/gabriela/T2-ORI/T2-ORI /home/gabriela/T2-ORI/T2-ORI /home/gabriela/T2-ORI/T2-ORI/cmake-build-debug /home/gabriela/T2-ORI/T2-ORI/cmake-build-debug /home/gabriela/T2-ORI/T2-ORI/cmake-build-debug/CMakeFiles/ArvoreB.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ArvoreB.dir/depend
 
