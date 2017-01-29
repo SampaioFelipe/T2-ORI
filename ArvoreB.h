@@ -22,10 +22,13 @@ typedef struct Node{
     int qtdChavesAtual;
 }Node;
 
+
+
 void cria(Node** r, int grau);
 int insere(Node** r, int chave);
-int insereRecursivo(Node** r, int chave, int* promocao, int* chavePromovida, Node** novoNode);
-int busca(Node* r, int chave);
+int insereRecursivo(Node** r, int chave, Node** nodePai);
+void divide(Node **r, Node** novoIrmao, Node** nodePai);
+int busca(Node** r, int chave);
 int buscaRecursivo(Node* r, int chave);
 
 #endif //ARVOREB_ARVOREB_H
