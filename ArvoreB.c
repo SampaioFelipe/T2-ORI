@@ -107,7 +107,6 @@ void divide(Node **r, Node** novoIrmao, Node** nodePai){
     }
     return;
 }
-<<<<<<< HEAD
 
 int busca(Node** r, int chave, int *count) {
     count=0;
@@ -164,18 +163,6 @@ int buscaRecursivo(Node** r, int chave, int* count){
         } else if (chave < (*r)->chaves[i]) {
             if ((*r)->filhos[i] != NULL) {
                 return (buscaRecursivo((*r)->filhos[i], chave, &count));
-=======
-
-int busca(Node **r, int chave) {
-    int count;
-    int i = 0;
-    while (i < (*r)->qtdChavesAtual) {
-        if (chave = (*r)->chaves[i]) {
-            return 1;
-        } else if (chave < (*r)->chaves[i]) {
-            if ((*r)->filhos[i] != NULL) {
-                return (busca((*r)->filhos[i], chave));
->>>>>>> 83f18028f1dc42494c5e2906742bf352c7863316
             } else {
                 return -1;
             }
@@ -183,20 +170,12 @@ int busca(Node **r, int chave) {
         }
         if (chave > (*r)->chaves[i]) {
             if ((*r)->filhos[i] != NULL) {
-<<<<<<< HEAD
                 return (buscaRecursivo((*r)->filhos[i], chave, &count));
-=======
-                return (busca((*r)->filhos[i], chave));
->>>>>>> 83f18028f1dc42494c5e2906742bf352c7863316
             } else {
                 return -1;
             }
         }
-<<<<<<< HEAD
-    }
-}
-=======
 
     }
 }
->>>>>>> 83f18028f1dc42494c5e2906742bf352c7863316
+
