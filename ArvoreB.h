@@ -29,7 +29,7 @@ void cria(Node** r, int grau);
 void insereChave(Node** r, int novaChave, Node* novoFilho);
 int insere(Node** r, int chave);
 int insereRecursivo(Node **r, int chave, int* tevePromocao, int* chavePromovida, Node* novoNode);
-void divide(Node **r, Node** novoIrmao, Node** nodePai);
+void divide(Node **r, int* chave, Node** novoNo);
 
 int busca(Node** r, int chave, int* count);
 int buscaRecursivo(Node** r, int chave, int* count);
