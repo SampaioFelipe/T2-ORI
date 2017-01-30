@@ -3,14 +3,14 @@
 
 
 int main(int argc, char* argv[]){
-    Node** Btree;
+
+    ArvoreB Btree;
 	
-	cria(Btree, 2);
-	insere(Btree, 2);
+	cria(&Btree, 2);
+	insere(&Btree, 2);
 
-	printf("Funciona");
-//	printf((*Btree)->chaves[0]);
-
+	printf("Funciona\n");
+	printf("%d\n", Btree->chaves[0]);
 
     return 0;
 }

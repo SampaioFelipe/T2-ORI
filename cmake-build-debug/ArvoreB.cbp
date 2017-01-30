@@ -8,38 +8,38 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/gabriela/T2-ORI/T2-ORI/cmake-build-debug"/>
+				<Option working_dir="/home/felipe/Documents/git/T2/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/gabriela/T2-ORI/T2-ORI/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/gabriela/T2-ORI/T2-ORI/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/gabriela/T2-ORI/T2-ORI/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/gabriela/T2-ORI/T2-ORI/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/felipe/Documents/git/T2/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/felipe/Documents/git/T2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/felipe/Documents/git/T2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/felipe/Documents/git/T2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/gabriela/T2-ORI/T2-ORI/cmake-build-debug"/>
+				<Option working_dir="/home/felipe/Documents/git/T2/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/gabriela/T2-ORI/T2-ORI/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/gabriela/T2-ORI/T2-ORI/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/gabriela/T2-ORI/T2-ORI/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/gabriela/T2-ORI/T2-ORI/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/felipe/Documents/git/T2/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/felipe/Documents/git/T2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/felipe/Documents/git/T2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/felipe/Documents/git/T2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/gabriela/T2-ORI/T2-ORI/cmake-build-debug"/>
+				<Option working_dir="/home/felipe/Documents/git/T2/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/gabriela/T2-ORI/T2-ORI/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/gabriela/T2-ORI/T2-ORI/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/gabriela/T2-ORI/T2-ORI/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/gabriela/T2-ORI/T2-ORI/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/felipe/Documents/git/T2/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/felipe/Documents/git/T2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/felipe/Documents/git/T2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/felipe/Documents/git/T2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ArvoreB">
-				<Option output="/home/gabriela/T2-ORI/T2-ORI/cmake-build-debug/ArvoreB" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/gabriela/T2-ORI/T2-ORI/cmake-build-debug"/>
+				<Option output="/home/felipe/Documents/git/T2/cmake-build-debug/ArvoreB" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/felipe/Documents/git/T2/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -54,15 +54,15 @@
 					<Add directory="/usr/include/c++/5/backward"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/gabriela/T2-ORI/T2-ORI/cmake-build-debug/Makefile&quot;  VERBOSE=1 ArvoreB"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/gabriela/T2-ORI/T2-ORI/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/gabriela/T2-ORI/T2-ORI/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/gabriela/T2-ORI/T2-ORI/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/felipe/Documents/git/T2/cmake-build-debug/Makefile&quot;  VERBOSE=1 ArvoreB"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/felipe/Documents/git/T2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/felipe/Documents/git/T2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/felipe/Documents/git/T2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ArvoreB/fast">
-				<Option output="/home/gabriela/T2-ORI/T2-ORI/cmake-build-debug/ArvoreB" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/gabriela/T2-ORI/T2-ORI/cmake-build-debug"/>
+				<Option output="/home/felipe/Documents/git/T2/cmake-build-debug/ArvoreB" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/felipe/Documents/git/T2/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -77,23 +77,23 @@
 					<Add directory="/usr/include/c++/5/backward"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/gabriela/T2-ORI/T2-ORI/cmake-build-debug/Makefile&quot;  VERBOSE=1 ArvoreB/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/gabriela/T2-ORI/T2-ORI/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/gabriela/T2-ORI/T2-ORI/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/gabriela/T2-ORI/T2-ORI/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/felipe/Documents/git/T2/cmake-build-debug/Makefile&quot;  VERBOSE=1 ArvoreB/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/felipe/Documents/git/T2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/felipe/Documents/git/T2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/felipe/Documents/git/T2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/gabriela/T2-ORI/T2-ORI/ArvoreB.c">
+		<Unit filename="/home/felipe/Documents/git/T2/ArvoreB.c">
 			<Option target="ArvoreB"/>
 		</Unit>
-		<Unit filename="/home/gabriela/T2-ORI/T2-ORI/ArvoreB.h">
+		<Unit filename="/home/felipe/Documents/git/T2/ArvoreB.h">
 			<Option target="ArvoreB"/>
 		</Unit>
-		<Unit filename="/home/gabriela/T2-ORI/T2-ORI/main.c">
+		<Unit filename="/home/felipe/Documents/git/T2/main.c">
 			<Option target="ArvoreB"/>
 		</Unit>
-		<Unit filename="/home/gabriela/T2-ORI/T2-ORI/CMakeLists.txt">
+		<Unit filename="/home/felipe/Documents/git/T2/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

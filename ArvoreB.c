@@ -1,6 +1,7 @@
 #include "ArvoreB.h"
 
 void cria(Node **r, int grau) {
+    *r = (Node*)malloc(sizeof(Node));
     (*r)->grauMinimo = grau; // Metade da capacidade do nó (quantidade de chaves)
     int nChaves = 2 * grau; // Numero máximo de chaves
     (*r)->chaves = (int *) malloc(sizeof(int) * nChaves);
@@ -20,6 +21,7 @@ int insere(Node **r, int chave) {
         (*r)->filhos[0] = NULL;
         (*r)->filhos[1] = NULL;
         (*r)->qtdChavesAtual++;
+//        printf((*r)->qtdChavesAtual);
         status = 0;
     } else {
         //Verifico onde a chave será inserida e se ela já existe

@@ -6,19 +6,19 @@
 
 #IncludeRegexTransform: 
 
-/home/gabriela/T2-ORI/T2-ORI/ArvoreB.c
+/home/felipe/Documents/git/T2/ArvoreB.c
 ArvoreB.h
-/home/gabriela/T2-ORI/T2-ORI/ArvoreB.h
+/home/felipe/Documents/git/T2/ArvoreB.h
 
-/home/gabriela/T2-ORI/T2-ORI/ArvoreB.h
+/home/felipe/Documents/git/T2/ArvoreB.h
 stdlib.h
 -
 stdio.h
 -
 
-/home/gabriela/T2-ORI/T2-ORI/main.c
+/home/felipe/Documents/git/T2/main.c
 stdio.h
 -
 ArvoreB.h
-/home/gabriela/T2-ORI/T2-ORI/ArvoreB.h
+/home/felipe/Documents/git/T2/ArvoreB.h
 

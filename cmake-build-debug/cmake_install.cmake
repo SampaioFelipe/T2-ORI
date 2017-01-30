@@ -1,4 +1,4 @@
-# Install script for directory: /home/gabriela/T2-ORI/T2-ORI
+# Install script for directory: /home/felipe/Documents/git/T2
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/gabriela/T2-ORI/T2-ORI/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/felipe/Documents/git/T2/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
