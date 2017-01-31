@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/felipe/Documents/git/T2/ArvoreB.c" "/home/felipe/Documents/git/T2/cmake-build-debug/CMakeFiles/ArvoreB.dir/ArvoreB.c.o"
-  "/home/felipe/Documents/git/T2/main.c" "/home/felipe/Documents/git/T2/cmake-build-debug/CMakeFiles/ArvoreB.dir/main.c.o"
+  "/home/gabriela/T2-ORI/T2-ORI/ArvoreB.c" "/home/gabriela/T2-ORI/T2-ORI/cmake-build-debug/CMakeFiles/ArvoreB.dir/ArvoreB.c.o"
+  "/home/gabriela/T2-ORI/T2-ORI/main.c" "/home/gabriela/T2-ORI/T2-ORI/cmake-build-debug/CMakeFiles/ArvoreB.dir/main.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
