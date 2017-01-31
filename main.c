@@ -17,26 +17,30 @@ int main(int argc, char* argv[]){
 //	printf("Funciona\n");
 //	//printf("%d\n", Btree->chaves[2]);
 
-    insere(&Btree, 5);
-    printf("%d\n",Btree->chaves[0]);
 
-    insere(&Btree, 2);
-    printf("%d\n",Btree->chaves[0]);
+    //Teste do divide para varios niveis
 
-    insere(&Btree, 8);
-    printf("%d\n",Btree->chaves[2]);
+    for(int i=1; i<=16; i++){
+        insere(&Btree,i);
+    }
+    printf("raiz\n");
+    for(int i=0; i<4;i++){
+        printf("%d ",Btree->chaves[i]);
+    }
+    printf("\nfilhos 1\n");
+    for(int i=0;i<=4;i++) {
+        for (int j = 0; j < 4; j++) {
+            printf("%d ", Btree->filhos[i]->chaves[j]);
+        }
+        printf("- ");
+    }
+    printf("\n");
+    int count;
 
-    insere(&Btree, 6);
-    printf("%d\n",Btree->chaves[2]);
-
-    insere(&Btree, 1);
-    printf("%d\n",Btree->chaves[0]);
-    insere(&Btree, 7);
-    insere(&Btree, 9);
-    insere(&Btree, 10);
-
-    printf("%d\n",Btree->chaves[1]);
-    printf("%d\n",Btree->filhos[2]->chaves[0]);
+    printf("Teste de busca: %d\n", busca(&Btree, 2,&count));
+    printf("%d\n",count);
+    //printf("%d\n",Btree->filhos[3]->chaves[0]);
+    //printf("%d\n",Btree->filhos[0]->filhos[0]->chaves[0]);
 
     return 0;
 }
