@@ -45,7 +45,7 @@ int insere(Node **r, int chave) {
         int chavePromovida;
         Node* novoNode;
         status = insereRecursivo(r, chave, &tevePromocao, &chavePromovida, &novoNode);
-        printf("Chave promovida fora: %d\n", chavePromovida);
+//        printf("Chave promovida: %d\n", chavePromovida);
 
         if (tevePromocao == True){ // Se houve promocao entao criamos um novo no raiz
             //Cria um novo node interno
@@ -73,9 +73,9 @@ int insereRecursivo(Node **r, int chave, Bool* tevePromocao, int* chavePromovida
     int i;
     for(i = 0; (i<(*r)->qtdChavesAtual) && chave>(*r)->chaves[i]; i++);
 
-    printf("Tem a chave %d\n", (*r)->chaves[i]);
-    printf("Quantidade de chaves %d\n",(*r)->qtdChavesAtual);
-    printf("Vai descer em: %d\n", i);
+//    printf("Tem a chave %d\n", (*r)->chaves[i]);
+//    printf("Quantidade de chaves %d\n",(*r)->qtdChavesAtual);
+//    printf("Vai descer em: %d\n", i);
 
     if(chave==(*r)->chaves[i]) {
         // TODO: Tratar erro
@@ -84,6 +84,7 @@ int insereRecursivo(Node **r, int chave, Bool* tevePromocao, int* chavePromovida
 
     if((*r)->eFolha == False) {
         status = insereRecursivo(&(*r)->filhos[i], chave, tevePromocao, chavePromovida, novoNode);
+        printf("Chave promovida fora: %d\n", *chavePromovida);
         if(*tevePromocao == True) { //TODO: Verificar se coloca status aqui
             if((*r)->qtdChavesAtual < 2 * (*r)->grauMinimo) { // Nao esta cheio
                 insereChave(r,*chavePromovida,*novoNode);
@@ -91,9 +92,12 @@ int insereRecursivo(Node **r, int chave, Bool* tevePromocao, int* chavePromovida
             }
             else{
                 // TODO: Testar as verificacoes da divisao quando nao e folha
+                printf("Divide interno\n");
                 Node* novoFilho;
-                divide(r, chave, chavePromovida, *novoNode, &novoFilho);
-
+                int novaChavePromovida;
+                divide(r, *chavePromovida, &novaChavePromovida, *novoNode, &novoFilho);
+                *chavePromovida = novaChavePromovida;
+                printf("Chave promovida fora 2: %d\n", *chavePromovida);
                 *novoNode = novoFilho;
             }
         }
@@ -105,7 +109,7 @@ int insereRecursivo(Node **r, int chave, Bool* tevePromocao, int* chavePromovida
             *tevePromocao = False;
         }
         else{
-            printf("Tera que dividir\n");
+//            printf("Tera que dividir\n");
             divide(r, chave, chavePromovida, NULL, novoNode);
             *tevePromocao = True;
         }
@@ -118,35 +122,44 @@ void divide(Node **r, int chave, int* chavePromovida, Node* nodeDireita, Node** 
     cria(novoNode, (*r)->grauMinimo);
 
     int mediana = (*r)->chaves[(*r)->grauMinimo];
-
+    int i;
     if(chave < mediana)
     {
-        for (int i = (*r)->grauMinimo; i < 2 * (*r)->grauMinimo; i++) {
+        for (i = (*r)->grauMinimo; i < 2 * (*r)->grauMinimo; i++) {
             printf("Transferindo: %d\n", (*r)->chaves[i]);
             (*novoNode)->chaves[i - (*r)->grauMinimo] = (*r)->chaves[i];
             (*r)->chaves[i]=0;
-            (*novoNode)->filhos[i + 1 - (*r)->grauMinimo] = (*r)->filhos[i];
+            (*novoNode)->filhos[i - (*r)->grauMinimo] = (*r)->filhos[i];
+            (*r)->filhos[i] = NULL;
             (*novoNode)->qtdChavesAtual++;
             (*r)->qtdChavesAtual--;
         }
-        (*r)->qtdChavesAtual--;
+        (*novoNode)->filhos[i - (*r)->grauMinimo] = (*r)->filhos[i];
+        (*r)->filhos[i] = NULL;
         insereChave(r, chave, nodeDireita);
 
     } else{
-        for (int i = (*r)->grauMinimo + 1; i < 2 * (*r)->grauMinimo; i++) {
+
+        for (i = (*r)->grauMinimo + 1; i < 2 * (*r)->grauMinimo; i++) {
             printf("Transferindo: %d\n", (*r)->chaves[i]);
             (*novoNode)->chaves[i - ((*r)->grauMinimo + 1)] = (*r)->chaves[i];
             (*r)->chaves[i]=0;
-            (*novoNode)->filhos[i + 1 - (*r)->grauMinimo] = (*r)->filhos[i];
+            (*novoNode)->filhos[i - ((*r)->grauMinimo + 1)] = (*r)->filhos[i];
+            (*r)->filhos[i] = NULL;
             (*novoNode)->qtdChavesAtual++;
             (*r)->qtdChavesAtual--;
         }
-        (*r)->qtdChavesAtual--;
+        printf("I depois do loop %d\n", i);
+        (*novoNode)->filhos[i - ((*r)->grauMinimo + 1)] = (*r)->filhos[i];
+        (*r)->filhos[i] = NULL;
+
         insereChave(novoNode, chave, nodeDireita);
     }
 
+    (*r)->qtdChavesAtual--;
     *chavePromovida = (*r)->chaves[(*r)->grauMinimo];
     (*r)->chaves[(*r)->grauMinimo] = 0;
+    printf("Chave promovida dentro: %d\n", *chavePromovida);
 }
 
 
