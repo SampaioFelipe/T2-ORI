@@ -41,8 +41,9 @@ int main(int argc, char* argv[]){
 
     cria(&Btree2, 2);
     int chavePromovida;
-    divide(&Btree, 10, &chavePromovida, &Btree, &Btree2);
+    divide(&Btree, 3, &chavePromovida, &Btree, &Btree2);
     printf("%d\n", Btree2->chaves[1]);
+    printf("%d\n", Btree->chaves[1]);
 
     return 0;
 }

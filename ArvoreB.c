@@ -135,6 +135,8 @@ void divide(Node **r, int chave, int* chavePromovida, Node* nodeDireita, Node** 
         }
     }
 
+    insereChave(r,chave,NULL);
+
     *chavePromovida = (*r)->chaves[(*r)->grauMinimo];
 }
 
