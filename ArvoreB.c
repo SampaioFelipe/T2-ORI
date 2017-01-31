@@ -118,7 +118,7 @@ void divide(Node **r, int chave, int* chavePromovida, Node* nodeDireita, Node** 
 
     if(chave < mediana)
     {
-        for (int i = (*r)->grauMinimo; i < 2 * (*r)->grauMinimo; i++) {
+        for (int i = (*r)->grauMinimo; i < 2 * (*r)->grauMinimo; i++) { // m
             printf("Transferindo: %d\n", (*r)->chaves[i]);
             (*novoNo)->chaves[i - (*r)->grauMinimo] = (*r)->chaves[i];
             (*novoNo)->filhos[i + 1 - (*r)->grauMinimo] = (*r)->filhos[i];
@@ -126,7 +126,13 @@ void divide(Node **r, int chave, int* chavePromovida, Node* nodeDireita, Node** 
             (*r)->qtdChavesAtual--;
         }
     } else{
-
+        for (int i = (*r)->grauMinimo+1; i < 2 * (*r)->grauMinimo; i++) { // m+1
+            printf("Transferindo: %d\n", (*r)->chaves[i]);
+            (*novoNo)->chaves[i - ((*r)->grauMinimo+1)] = (*r)->chaves[i];
+            (*novoNo)->filhos[i + 1 - ((*r)->grauMinimo+1)] = (*r)->filhos[i];
+            (*novoNo)->qtdChavesAtual++;
+            (*r)->qtdChavesAtual--;
+        }
     }
 
     *chavePromovida = (*r)->chaves[(*r)->grauMinimo];

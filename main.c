@@ -6,7 +6,7 @@ int main(int argc, char* argv[]){
 
     ArvoreB Btree;
 	
-	cria(&Btree, 2);
+	cria(&Btree, 3);
 //    insere(&Btree,4);
 //	insere(&Btree, 5);
 //    insere(&Btree, 2);
@@ -29,8 +29,20 @@ int main(int argc, char* argv[]){
     insere(&Btree, 6);
     printf("%d\n",Btree->chaves[2]);
 
-    insere(&Btree, 10);
+    insere(&Btree, 11);
     printf("%d\n",Btree->chaves[3]);
+
+    insere(&Btree, 12);
+    printf("%d\n",Btree->chaves[3]);
+
+
+    //teste do divide
+    ArvoreB Btree2;
+
+    cria(&Btree2, 2);
+    int chavePromovida;
+    divide(&Btree, 10, &chavePromovida, &Btree, &Btree2);
+    printf("%d\n", Btree2->chaves[1]);
 
     return 0;
 }
