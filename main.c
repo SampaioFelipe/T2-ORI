@@ -29,8 +29,14 @@ int main(int argc, char* argv[]){
     insere(&Btree, 6);
     printf("%d\n",Btree->chaves[2]);
 
+    insere(&Btree, 1);
+    printf("%d\n",Btree->chaves[0]);
+    insere(&Btree, 7);
+    insere(&Btree, 9);
     insere(&Btree, 10);
-    printf("%d\n",Btree->chaves[3]);
+
+    printf("%d\n",Btree->chaves[1]);
+    printf("%d\n",Btree->filhos[2]->chaves[0]);
 
     return 0;
 }
