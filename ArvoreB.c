@@ -163,55 +163,58 @@ void divide(Node **r, int chave, int* chavePromovida, Node* nodeDireita, Node** 
 }
 
 
-int busca(Node** r, int chave, int *count) {
-    *count=0;
+int busca(Node** r, int chave, Node *pos) {
     int i=0;
     if(r == NULL){
         return -1;
     } else{
         if(chave < (*r)->chaves[0]){
-            return buscaRecursivo(&(*r)->filhos[0],chave, count);
-        } else if (chave == (*r)->chaves[0]) {
-            return 0;
+            return (buscaRecursivo(&(*r)->filhos[0],chave, &pos));
         } else{
             while (i < (*r)->qtdChavesAtual && i >= 0) {
                 if(chave == (*r)->chaves[i]){
+                    pos = (*r);
                     return i;
                 } else if (chave > (*r)->chaves[i] && chave < (*r)->chaves[i + 1]) {
-                    return buscaRecursivo(&(*r)->filhos[i+1], chave, count);
+                    return (buscaRecursivo(&((*r)->filhos[i+1]), chave, &pos));
                 }
                 i++;
             }
-
+            if(chave == (*r)->chaves[i]){
+                pos = (*r);
+                return i;
+            }
             if(chave > (*r)->chaves[i]){
-                return buscaRecursivo(&(*r)->filhos[i],chave, count);
+                return (buscaRecursivo(&((*r)->filhos[i]),chave, &pos));
             }
         }
     }
 }
 
-int buscaRecursivo(Node** r, int chave, int* count){
-    (*count)++;
+int buscaRecursivo(Node** r, int chave, Node* pos){
     int i=0;
-    if(r == NULL){
+    if((*r) == NULL){
         return -1;
     } else{
         if(chave < (*r)->chaves[0]){
-            return buscaRecursivo(&(*r)->filhos[0],chave, count);
-        } else if (chave == (*r)->chaves[0]) {
-            return 0;
+            return buscaRecursivo(&(*r)->filhos[0],chave, &pos);
         } else{
-            while (i < (*r)->qtdChavesAtual && (*r)->chaves[i] != chave && i >= 0) {
+            while (i <= (*r)->qtdChavesAtual && (*r)->chaves[i] != chave && i >= 0) {
                 if(chave == (*r)->chaves[i]){
+                    pos = (*r);
                     return i;
                 } else if (chave > (*r)->chaves[i] && chave < (*r)->chaves[i + 1]) {
-                    return buscaRecursivo(&(*r)->filhos[i+1], chave, count);
+                    return buscaRecursivo(&((*r)->filhos[i+1]), chave, &pos);
                 }
                 i++;
             }
+            if(chave == (*r)->chaves[i]){
+                pos=(*r);
+                return i;
+            }
 
             if(chave > (*r)->chaves[i]){
-                return buscaRecursivo(&(*r)->filhos[i],chave, count);
+                return buscaRecursivo(&((*r)->filhos[i]),chave, &pos);
             }
         }
     }
