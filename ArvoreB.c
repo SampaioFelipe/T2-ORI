@@ -10,7 +10,10 @@ void cria(Node **r, int grau) {
     (*r)->eFolha = True;
 }
 
-void insereChave(Node** r, int novaChave, Node* novoFilho){
+
+
+
+void insereChave(Node** r, int novaChave, const Node* novoFilho){
 
     int posicao = (*r)->qtdChavesAtual;
 
@@ -105,7 +108,7 @@ int insereRecursivo(Node **r, int chave, Bool* tevePromocao, int* chavePromovida
     return status;
 }
 
-void divide(Node **r, int chave, int* chavePromovida, Node* nodeDireita, Node** novoNode) { // Divide o nó, promovendo uma chave
+void divide(Node **r, int* chavePromovida, Node* nodeDireita, Node** novoNode) { // Divide o nó, promovendo uma chave
     cria(novoNode, (*r)->grauMinimo); // Cria o novo nó com grau mínimo definido
 
     int mediana = (*r)->chaves[(*r)->grauMinimo]; // Define a mediana do vetor chaves
@@ -149,27 +152,27 @@ void divide(Node **r, int chave, int* chavePromovida, Node* nodeDireita, Node** 
 int busca(Node** r, int chave, Node** pos) {
     int i=0;
     *pos = NULL;
-    if(r == NULL){
+    if(r == NULL){ // Se o nó for vazio, retorne flag de status
         return -1;
     } else{
-        if(chave < (*r)->chaves[0]){
-            return (buscaRecursivo(&(*r)->filhos[0],chave, pos));
+        if(chave < (*r)->chaves[0]){ // Se a chave for menor que a posição incial do nó
+            return (buscaRecursivo(&(*r)->filhos[0],chave, pos)); 
         } else{
-            while (i < (*r)->qtdChavesAtual && i >= 0) {
-                if(chave == (*r)->chaves[i]){
-                    *pos = (*r);
-                    return i;
-                } else if (chave > (*r)->chaves[i] && chave < (*r)->chaves[i + 1]) {
-                    return (buscaRecursivo(&((*r)->filhos[i+1]), chave, pos));
+            while (i < (*r)->qtdChavesAtual && i >= 0) { // Enquanto houver chaves disponíveis
+                if(chave == (*r)->chaves[i]){ // Compare a chave da posição no vetor, com a chave buscada
+                    *pos = (*r); // Se achar, aponte
+                    return i; // Retorne a chave
+                } else if (chave > (*r)->chaves[i] && chave < (*r)->chaves[i + 1]) { // Se chave for maior que posição e menor que mediana
+                    return (buscaRecursivo(&((*r)->filhos[i+1]), chave, pos)); // Busque no recursivamente no filho
                 }
                 i++;
             }
-            if(chave == (*r)->chaves[i]){
-                *pos = (*r);
-                return i;
+            if(chave == (*r)->chaves[i]){ // Compare a chave da posição no vetor, com a chave buscada
+                *pos = (*r); // Se achar, aponte
+                return i; // Retorne a chave
             }
-            if(chave > (*r)->chaves[i]){
-                return (buscaRecursivo(&((*r)->filhos[i]),chave, pos));
+            if(chave > (*r)->chaves[i]){ // Se chave for maior que a da posição
+                return (buscaRecursivo(&((*r)->filhos[i]),chave, pos)); // Busque no recursivamente no filho
             }
         }
     }
@@ -177,28 +180,28 @@ int busca(Node** r, int chave, Node** pos) {
 
 int buscaRecursivo(Node** r, int chave, Node** pos){
     int i=0;
-    if((*r) == NULL){
+    if((*r) == NULL){ // Se o nó for vazio, retorne flag de status
         return -1;
     } else{
-        if(chave < (*r)->chaves[0]){
+        if(chave < (*r)->chaves[0]){ // Se a chave for menor que a posição incial do nó
             return buscaRecursivo(&(*r)->filhos[0],chave, pos);
         } else{
-            while (i <= (*r)->qtdChavesAtual && (*r)->chaves[i] != chave && i >= 0) {
-                if(chave == (*r)->chaves[i]){
-                    *pos = (*r);
-                    return i;
-                } else if (chave > (*r)->chaves[i] && chave < (*r)->chaves[i + 1]) {
-                    return buscaRecursivo(&((*r)->filhos[i+1]), chave, pos);
+            while (i <= (*r)->qtdChavesAtual && (*r)->chaves[i] != chave && i >= 0) { // Enquanto houver chaves disponíveis
+                if(chave == (*r)->chaves[i]){ // Compare a chave da posição no vetor, com a chave buscada
+                    *pos = (*r);  // Se achar, aponte
+                    return i; // Retorne a chave
+                } else if (chave > (*r)->chaves[i] && chave < (*r)->chaves[i + 1]) { // Se chave for maior que posição e menor que mediana
+                    return buscaRecursivo(&((*r)->filhos[i+1]), chave, pos); // Busque no recursivamente no filho
                 }
                 i++;
             }
-            if(chave == (*r)->chaves[i]){
-                *pos=(*r);
-                return i;
+            if(chave == (*r)->chaves[i]){ // Compare a chave da posição no vetor, com a chave buscada
+                *pos=(*r); // Se achar, aponte
+                return i; // Retorne a chave
             }
 
-            if(chave > (*r)->chaves[i]){
-                return buscaRecursivo(&((*r)->filhos[i]),chave, pos);
+            if(chave > (*r)->chaves[i]){ // Se chave for maior que a da posição
+                return buscaRecursivo(&((*r)->filhos[i]),chave, pos); // Busque no recursivamente no filho
             }
         }
     }
