@@ -2,7 +2,7 @@
 * Nome: ArvoreB
 * Autores: Felipe Sampaio de Souza, Pedro Henrique Mauad, Pedro Henrique Migliatti
 * Pre-requisitos: Sistema Operacional Linux
-* Entrada:
+* Entrada: [ -t (grau minimo da árvore)] + [resposta do menu| 1. Inserir 2. Buscar 3. Sair] + [valor da chave ( no caso de escolha 1 ou 2)]
 * Descricao:
 */
 
