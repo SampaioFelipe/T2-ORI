@@ -22,7 +22,7 @@ void insereChave(Node** r, int novaChave, const Node* novoFilho){
     }
 
     (*r)->chaves[posicao] = novaChave; // Atribui a chave inserida para a posição designada no vetor chaves
-    (*r)->filhos[posicao+1] = novoFilho; // Atribui o filho a direita chave inserida na posição designada no vetor filhos
+    (*r)->filhos[posicao+1] = novoFilho; // Atribui o novo filho a direita da chave inserida na posição designada no vetor filhos
 
     (*r)->qtdChavesAtual++;
 }
