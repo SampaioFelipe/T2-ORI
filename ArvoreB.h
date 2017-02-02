@@ -33,7 +33,7 @@ typedef struct Node{
 }Node;
 
 void cria(Node** r, int grau);
-void insereChave(Node** r, int novaChave, const Node* novoFilho);
+void insereChave(Node** r, int novaChave, Node* novoFilho);
 int insere(Node** r, int chave);
 int insereRecursivo(Node **r, int chave, Bool* tevePromocao, int* chavePromovida, Node** novoNode);
 void divide(Node **r, int chave, int* chavePromovida, Node* nodeDireita, Node** novoNo);

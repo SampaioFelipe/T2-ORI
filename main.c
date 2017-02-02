@@ -30,7 +30,7 @@ bem como a realização da busca de chaves na Árvore criada.
 int main(int argc, char* argv[]){
 
     int status;
-    //TODO: Excluir os printf de teste
+
     if(argc != 3)
     {
         printf("Quantidade de argumentos incorreta.\n");

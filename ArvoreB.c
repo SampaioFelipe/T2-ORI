@@ -10,10 +10,7 @@ void cria(Node **r, int grau) {
     (*r)->eFolha = True;
 }
 
-
-
-
-void insereChave(Node** r, int novaChave, const Node* novoFilho){
+void insereChave(Node** r, int novaChave, Node* novoFilho){
 
     int posicao = (*r)->qtdChavesAtual;
 
@@ -108,7 +105,7 @@ int insereRecursivo(Node **r, int chave, Bool* tevePromocao, int* chavePromovida
     return status;
 }
 
-void divide(Node **r, inAdiciona chave mediana do nó existente no início do nó criadochave, int* chavePromovida, Node* nodeDireita, Node** novoNode) { // Divide o nó, promovendo uma chave
+void divide(Node **r, int chave, int* chavePromovida, Node* nodeDireita, Node** novoNode) { // Divide o nó, promovendo uma chave
     cria(novoNode, (*r)->grauMinimo); // Cria o novo nó com grau mínimo definido
 
     int mediana = (*r)->chaves[(*r)->grauMinimo]; // Define a mediana do vetor chaves
