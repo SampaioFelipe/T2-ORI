@@ -14,14 +14,14 @@ void insereChave(Node** r, int novaChave, const Node* novoFilho){
 
     int posicao = (*r)->qtdChavesAtual;
 
-    while (novaChave < (*r)->chaves[posicao-1] && posicao>0){
-        (*r)->chaves[posicao] = (*r)->chaves[posicao-1];
+    while (novaChave < (*r)->chaves[posicao-1] && posicao>0){ // Verifica se a nova chave é menor que a maior chave do nó e se o nó não é vazio
+        (*r)->chaves[posicao] = (*r)->chaves[posicao-1]; // Desloca o ponteiro para posição anterior do vetor chaves
         (*r)->filhos[posicao+1] = (*r)->filhos[posicao];
 
         posicao--;
     }
 
-    (*r)->chaves[posicao] = novaChave;
+    (*r)->chaves[posicao] = novaChave; // Atribui a chave inserida para a posição designada no vetor chaves
     (*r)->filhos[posicao+1] = novoFilho;
 
     (*r)->qtdChavesAtual++;
