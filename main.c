@@ -27,9 +27,9 @@ int main(int argc, char* argv[]){
             int op;
             int chave;
             Node* pos;
-            int *rBusca;
+            int rBusca;
             ArvoreB Btree;
-            cria(&Btree,2); //atoi(argv[2]));
+            cria(&Btree,atoi(argv[2]));
 
             do{
                 printf("Selecione uma opção:\n");

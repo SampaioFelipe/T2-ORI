@@ -150,6 +150,7 @@ void divide(Node **r, int chave, int* chavePromovida, Node* nodeDireita, Node** 
 
 int busca(Node** r, int chave, Node *pos) {
     int i=0;
+    pos = NULL;
     if(r == NULL){
         return -1;
     } else{
@@ -194,7 +195,7 @@ int buscaRecursivo(Node** r, int chave, Node* pos){
                 i++;
             }
             if(chave == (*r)->chaves[i]){
-                pos=(*r);
+                pos= (*r);
                 return i;
             }
 
