@@ -3,7 +3,23 @@
 * Autores: Felipe Sampaio de Souza, Pedro Henrique Mauad, Pedro Henrique Migliatti
 * Pre-requisitos: Sistema Operacional Linux
 * Entrada: [ -t (grau minimo da árvore)] + [resposta do menu| 1. Inserir 2. Buscar 3. Sair] + [valor da chave ( no caso de escolha 1 ou 2)]
-* Descricao:
+* Descricao: Programa para execução em na linha de comando que cria uma Árvore B e permite a realização de inserção de chaves,
+bem como a realização da busca de chaves na Árvore criada.
+*1)Argumentos: O primeiro argumento a ser passado se refere ao grau mínimo dá árvore B a ser criada.
+    -t = grau_minimo (passa-se o grau mínimo da árvore B.
+    
+*Em seguida um menu é disponibilizado para realização de operações na árvore:
+    - 1. Inserção: Permite a inserção de chaves na árvore
+    - 2. Busca: Permite a busca de chaves na árvore
+    - 3. Sair: Encerra o programa
+*    
+*2)Estrutura do arquivo gerado: O arquivo gerado após o processo de criação da árvore B consiste em:
+*   - Uma estrutura do tipo árvore B com três argumentos previamente citados.
+*   - Flag de Status, indicando falha ou sucesso das operações realizadas.
+*   - Flag de Status, indicando falha nos argumentos passados pelo usuário.
+
+*3)Retornos: Após o início de uma operação o programa pode retornar os resultados:
+    - 
 */
 
 #include <stdio.h>
