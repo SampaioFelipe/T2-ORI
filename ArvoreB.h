@@ -38,7 +38,7 @@ int insere(Node** r, int chave);
 int insereRecursivo(Node **r, int chave, Bool* tevePromocao, int* chavePromovida, Node** novoNode);
 void divide(Node **r, int chave, int* chavePromovida, Node* nodeDireita, Node** novoNo);
 
-int busca(Node** r, int chave, Node* pos);
-int buscaRecursivo(Node** r, int chave, Node* pos);
+int busca(Node** r, int chave, Node** pos);
+int buscaRecursivo(Node** r, int chave, Node** pos);
 
 #endif //ARVOREB_ARVOREB_H

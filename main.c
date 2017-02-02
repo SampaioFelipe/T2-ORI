@@ -26,7 +26,7 @@ int main(int argc, char* argv[]){
         {
             int op;
             int chave;
-            Node* pos;
+            Node** pos = NULL;
             int rBusca;
             ArvoreB Btree;
             cria(&Btree,atoi(argv[2]));
