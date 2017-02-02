@@ -6,20 +6,16 @@
 * Descricao: Programa para execução em na linha de comando que cria uma Árvore B e permite a realização de inserção de chaves,
 bem como a realização da busca de chaves na Árvore criada.
 *1)Argumentos: O primeiro argumento a ser passado se refere ao grau mínimo dá árvore B a ser criada.
-    -t = grau_minimo (passa-se o grau mínimo da árvore B.
+    -t = grau_minimo (passa-se o grau mínimo da árvore B).
     
 *Em seguida um menu é disponibilizado para realização de operações na árvore:
     - 1. Inserção: Permite a inserção de chaves na árvore
     - 2. Busca: Permite a busca de chaves na árvore
     - 3. Sair: Encerra o programa
-*    
-*2)Estrutura do arquivo gerado: O arquivo gerado após o processo de criação da árvore B consiste em:
-*   - Uma estrutura do tipo árvore B com três argumentos previamente citados.
-*   - Flag de Status, indicando falha ou sucesso das operações realizadas.
-*   - Flag de Status, indicando falha nos argumentos passados pelo usuário.
 
-*3)Retornos: Após o início de uma operação o programa pode retornar os resultados:
-    - 
+*2)Retorno:
+    - 1 : Não foi possível executar as operações pois os parametros passados são inválidos
+    - 0 : Execução concluída com sucesso
 */
 
 #include <stdio.h>
@@ -34,12 +30,14 @@ int main(int argc, char* argv[]){
     if(argc != 3)
     {
         printf("Quantidade de argumentos incorreta.\n");
-        status = 1;
+        status = 1; // Irá retornar erro na especificacao da chamada do programa
     }
     else
     {
         if(strcmp(argv[1],"-t") == 0)
         {
+            status = 0; // Irá retornar sucesso
+
             int op;
             int chave;
             Node* pos;
@@ -87,7 +85,7 @@ int main(int argc, char* argv[]){
         else
         {
             printf("Argumento inválido.\n");
-            status = 1;
+            status = 1; // Irá retorna erro na especificacao da chamada do programa
         }
     }
 
