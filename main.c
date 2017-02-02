@@ -26,7 +26,7 @@ int main(int argc, char* argv[]){
         {
             int op;
             int chave;
-            Node** pos = NULL;
+            Node* pos;
             int rBusca;
             ArvoreB Btree;
             cria(&Btree,atoi(argv[2]));
@@ -35,12 +35,16 @@ int main(int argc, char* argv[]){
                 printf("Selecione uma opção:\n");
                 printf("1 - Inserir uma chave\n");
                 printf("2 - Buscar uma chave\n");
-                printf("3 - Inserir uma chave\n");
+                printf("3 - Sair\n");
+
                 scanf("%d", &op);
+
+                while ((getchar()) != '\n'); // Limpa o buffer
 
                 if(op == 1) {
                     printf("Qual chave você deseja inserir?\n");
                     scanf("%d", &chave);
+                    while ((getchar()) != '\n'); // Limpa o buffer
                     if(chave<0){
                         printf("Chave inválida\n");
                     }else if (insere(&Btree, chave) == 1) {
@@ -63,13 +67,10 @@ int main(int argc, char* argv[]){
                 }
 
             }while (op!=3);
-            //TODO: Criar a arvore com o grau passado em argv[2] (é necessário transformar em int)
-            //TODO: Fazer um loop de interação que possibilite que o usuário faça: 1 - Inserção, 2 - Busca, 3 - Sair
-            printf("Argumento correto\n");
         }
         else
         {
-            printf("Argumento errado\n");
+            printf("Argumento inválido.\n");
             status = 1;
         }
     }

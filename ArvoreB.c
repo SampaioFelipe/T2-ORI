@@ -73,19 +73,17 @@ int insereRecursivo(Node **r, int chave, Bool* tevePromocao, int* chavePromovida
     for(i = 0; (i<(*r)->qtdChavesAtual) && chave>(*r)->chaves[i]; i++);
 
     if(chave==(*r)->chaves[i]) {
-        // TODO: Tratar erro
         return 1;
     }
 
     if((*r)->eFolha == False) {
         status = insereRecursivo(&(*r)->filhos[i], chave, tevePromocao, chavePromovida, novoNode);
-        if(*tevePromocao == True) { //TODO: Verificar se coloca status aqui
+        if(*tevePromocao == True) {
             if((*r)->qtdChavesAtual < 2 * (*r)->grauMinimo) { // Nao esta cheio
                 insereChave(r,*chavePromovida,*novoNode);
                 *tevePromocao = False;
             }
             else{
-                // TODO: Testar as verificacoes da divisao quando nao e folha
                 Node* novoFilho;
                 int novaChavePromovida;
                 divide(r, *chavePromovida, &novaChavePromovida, *novoNode, &novoFilho);
@@ -150,28 +148,28 @@ void divide(Node **r, int chave, int* chavePromovida, Node* nodeDireita, Node** 
 
 int busca(Node** r, int chave, Node** pos) {
     int i=0;
-    pos = NULL;
+    *pos = NULL;
     if(r == NULL){
         return -1;
     } else{
         if(chave < (*r)->chaves[0]){
-            return (buscaRecursivo(&(*r)->filhos[0],chave, &pos));
+            return (buscaRecursivo(&(*r)->filhos[0],chave, pos));
         } else{
             while (i < (*r)->qtdChavesAtual && i >= 0) {
                 if(chave == (*r)->chaves[i]){
-                    pos = r;
+                    *pos = (*r);
                     return i;
                 } else if (chave > (*r)->chaves[i] && chave < (*r)->chaves[i + 1]) {
-                    return (buscaRecursivo(&((*r)->filhos[i+1]), chave, &pos));
+                    return (buscaRecursivo(&((*r)->filhos[i+1]), chave, pos));
                 }
                 i++;
             }
             if(chave == (*r)->chaves[i]){
-                pos = r;
+                *pos = (*r);
                 return i;
             }
             if(chave > (*r)->chaves[i]){
-                return (buscaRecursivo(&((*r)->filhos[i]),chave, &pos));
+                return (buscaRecursivo(&((*r)->filhos[i]),chave, pos));
             }
         }
     }
@@ -183,24 +181,24 @@ int buscaRecursivo(Node** r, int chave, Node** pos){
         return -1;
     } else{
         if(chave < (*r)->chaves[0]){
-            return buscaRecursivo(&(*r)->filhos[0],chave, &pos);
+            return buscaRecursivo(&(*r)->filhos[0],chave, pos);
         } else{
             while (i <= (*r)->qtdChavesAtual && (*r)->chaves[i] != chave && i >= 0) {
                 if(chave == (*r)->chaves[i]){
-                    pos = r;
+                    *pos = (*r);
                     return i;
                 } else if (chave > (*r)->chaves[i] && chave < (*r)->chaves[i + 1]) {
-                    return buscaRecursivo(&((*r)->filhos[i+1]), chave, &pos);
+                    return buscaRecursivo(&((*r)->filhos[i+1]), chave, pos);
                 }
                 i++;
             }
             if(chave == (*r)->chaves[i]){
-                pos= r;
+                *pos=(*r);
                 return i;
             }
 
             if(chave > (*r)->chaves[i]){
-                return buscaRecursivo(&((*r)->filhos[i]),chave, &pos);
+                return buscaRecursivo(&((*r)->filhos[i]),chave, pos);
             }
         }
     }
