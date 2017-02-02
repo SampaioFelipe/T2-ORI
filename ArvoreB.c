@@ -108,44 +108,44 @@ int insereRecursivo(Node **r, int chave, Bool* tevePromocao, int* chavePromovida
     return status;
 }
 
-void divide(Node **r, int chave, int* chavePromovida, Node* nodeDireita, Node** novoNode) { // Divide o nó, promovendo uma chave
+void divide(Node **r, inAdiciona chave mediana do nó existente no início do nó criadochave, int* chavePromovida, Node* nodeDireita, Node** novoNode) { // Divide o nó, promovendo uma chave
     cria(novoNode, (*r)->grauMinimo); // Cria o novo nó com grau mínimo definido
 
     int mediana = (*r)->chaves[(*r)->grauMinimo]; // Define a mediana do vetor chaves
     int i;
     if(chave < mediana)
     {
-        for (i = (*r)->grauMinimo; i < 2 * (*r)->grauMinimo; i++) { // ??
-            (*novoNode)->chaves[i - (*r)->grauMinimo] = (*r)->chaves[i]; // ??
+        for (i = (*r)->grauMinimo; i < 2 * (*r)->grauMinimo; i++) { // Transfere metade das chaves do nó existente para o nó criado
+            (*novoNode)->chaves[i - (*r)->grauMinimo] = (*r)->chaves[i]; // Adiciona chave mediana do nó existente no início do nó criado
             (*r)->chaves[i]=0; 
-            (*novoNode)->filhos[i - (*r)->grauMinimo] = (*r)->filhos[i]; // ??
+            (*novoNode)->filhos[i - (*r)->grauMinimo] = (*r)->filhos[i]; // Promove chave do meio para o nó pai
             (*r)->filhos[i] = NULL; // Nó já existente não possui filhos
             (*novoNode)->qtdChavesAtual++; // Aumenta a quantidade de chaves no nó criado
             (*r)->qtdChavesAtual--; // Diminui a quantidade de chaves no nó já existente
         }
-        (*novoNode)->filhos[i - (*r)->grauMinimo] = (*r)->filhos[i]; // ??
+        (*novoNode)->filhos[i - (*r)->grauMinimo] = (*r)->filhos[i]; // Adiciona chave mediana do nó existente no início do nó criado
         (*r)->filhos[i] = NULL; // Nó já existente não possui filhos
         insereChave(r, chave, nodeDireita);
 
     } else{
 
-        for (i = (*r)->grauMinimo + 1; i < 2 * (*r)->grauMinimo; i++) { // ??
-            (*novoNode)->chaves[i - ((*r)->grauMinimo + 1)] = (*r)->chaves[i]; // ??
+        for (i = (*r)->grauMinimo + 1; i < 2 * (*r)->grauMinimo; i++) { // Transfere metade das chaves do nó existente para o nó criado
+            (*novoNode)->chaves[i - ((*r)->grauMinimo + 1)] = (*r)->chaves[i]; // Adiciona chave mediana do nó existente no início do nó criado
             (*r)->chaves[i]=0;
-            (*novoNode)->filhos[i - ((*r)->grauMinimo + 1)] = (*r)->filhos[i]; // ??
+            (*novoNode)->filhos[i - ((*r)->grauMinimo + 1)] = (*r)->filhos[i]; // Promove chave do meio para o nó pai
             (*r)->filhos[i] = NULL; // Nó já existente não possui filhos
             (*novoNode)->qtdChavesAtual++; // Aumenta a quantidade de chaves no nó criado
             (*r)->qtdChavesAtual--; // Diminui a quantidade de chaves no nó já existente
         }
-        (*novoNode)->filhos[i - ((*r)->grauMinimo + 1)] = (*r)->filhos[i]; // ??
+        (*novoNode)->filhos[i - ((*r)->grauMinimo + 1)] = (*r)->filhos[i]; // Adiciona chave mediana do nó existente no início do nó criado
         (*r)->filhos[i] = NULL; // Nó já existente não possui filhos
 
         insereChave(novoNode, chave, nodeDireita);
     }
 
     (*r)->qtdChavesAtual--; // Diminui a quantidade de chaves no nó já existente 
-    *chavePromovida = (*r)->chaves[(*r)->grauMinimo]; // Aponta a chave promovida para mediana inicial do nó (??)
-    (*r)->chaves[(*r)->grauMinimo] = 0; // ??
+    *chavePromovida = (*r)->chaves[(*r)->grauMinimo]; // Aponta a chave promovida para mediana do nó
+    (*r)->chaves[(*r)->grauMinimo] = 0; 
 }
 
 
