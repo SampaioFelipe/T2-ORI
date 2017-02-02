@@ -57,8 +57,8 @@ int insere(Node **r, int chave) {
             novaRaiz->eFolha = False; // Criação de um novo nó acima dos nós folha, condição deve ser falsa
 
             novaRaiz->chaves[0] = chavePromovida; // chave promovida será a primeira chave do novo nó
-            novaRaiz->filhos[0] = *r; // 
-            novaRaiz->filhos[1] = novoNode; // 
+            novaRaiz->filhos[0] = *r; // O nó existente se torna o filho a esquerda
+            novaRaiz->filhos[1] = novoNode; // O novo nó criado se torna o filho a direita
             novaRaiz->qtdChavesAtual++; // Aumenta a quantidade de chaves totais na árvore
 
             *r = novaRaiz;
@@ -75,43 +75,43 @@ int insereRecursivo(Node **r, int chave, Bool* tevePromocao, int* chavePromovida
     int i;
     for(i = 0; (i<(*r)->qtdChavesAtual) && chave>(*r)->chaves[i]; i++);
 
-    if(chave==(*r)->chaves[i]) {
+    if(chave==(*r)->chaves[i]) { // Se a chave inserida já existe, retorne flag de status
         return 1;
     }
 
-    if((*r)->eFolha == False) {
-        status = insereRecursivo(&(*r)->filhos[i], chave, tevePromocao, chavePromovida, novoNode);
-        if(*tevePromocao == True) {
+    if((*r)->eFolha == False) { // Se não for no folha chamar insereRecursivo
+        status = insereRecursivo(&(*r)->filhos[i], chave, tevePromocao, chavePromovida, novoNode); 
+        if(*tevePromocao == True) { // Ocorreu promoção de chave
             if((*r)->qtdChavesAtual < 2 * (*r)->grauMinimo) { // Nao esta cheio
-                insereChave(r,*chavePromovida,*novoNode);
+                insereChave(r,*chavePromovida,*novoNode); // Insere a chave no novo nó
                 *tevePromocao = False;
             }
-            else{
+            else{ // Se está cheio
                 Node* novoFilho;
                 int novaChavePromovida;
-                divide(r, *chavePromovida, &novaChavePromovida, *novoNode, &novoFilho);
-                *chavePromovida = novaChavePromovida;
-                *novoNode = novoFilho;
+                divide(r, *chavePromovida, &novaChavePromovida, *novoNode, &novoFilho); // Divida o nó 
+                *chavePromovida = novaChavePromovida; // Promova uma nova chave
+                *novoNode = novoFilho; // Novo nó criado será o novo filho a direita do nó acima
             }
         }
     }
     else{ // Se for folha
-        if((*r)->qtdChavesAtual<2*(*r)->grauMinimo){
-            insereChave(r,chave,NULL);
-            *tevePromocao = False;
+        if((*r)->qtdChavesAtual<2*(*r)->grauMinimo){ // E não estiver cheio
+            insereChave(r,chave,NULL); // Insere
+            *tevePromocao = False; // Não há promoção de chaves
         }
-        else{
-            divide(r, chave, chavePromovida, NULL, novoNode);
-            *tevePromocao = True;
+        else{ // Se estiver cheio
+            divide(r, chave, chavePromovida, NULL, novoNode); // Divida o nó
+            *tevePromocao = True; // Promova uma chave
         }
     }
     return status;
 }
 
-void divide(Node **r, int chave, int* chavePromovida, Node* nodeDireita, Node** novoNode) {
-    cria(novoNode, (*r)->grauMinimo);
+void divide(Node **r, int chave, int* chavePromovida, Node* nodeDireita, Node** novoNode) { // Divide o nó, promovendo uma chave
+    cria(novoNode, (*r)->grauMinimo); // Cria o novo nó com grau mínimo definido
 
-    int mediana = (*r)->chaves[(*r)->grauMinimo];
+    int mediana = (*r)->chaves[(*r)->grauMinimo]; // Define a mediana do vetor chaves
     int i;
     if(chave < mediana)
     {
