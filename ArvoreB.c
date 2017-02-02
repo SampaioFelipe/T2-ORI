@@ -10,6 +10,9 @@ void cria(Node **r, int grau) {
     (*r)->eFolha = True;
 }
 
+
+
+
 void insereChave(Node** r, int novaChave, const Node* novoFilho){
 
     int posicao = (*r)->qtdChavesAtual;
@@ -29,16 +32,16 @@ void insereChave(Node** r, int novaChave, const Node* novoFilho){
 
 int insere(Node **r, int chave) {
     int status;
-    if (r == NULL) {
+    if (r == NULL) { // Caso não exista o nó, retorne flag de status
         return 1;
     }
 
     if ((*r)->qtdChavesAtual == 0)
     { // A árvore está vazia
-        (*r)->chaves[0] = chave;
-        (*r)->filhos[0] = NULL;
-        (*r)->filhos[1] = NULL;
-        (*r)->qtdChavesAtual++;
+        (*r)->chaves[0] = chave; // Atribui o valor da chave para a primeira posição do vetor chaves
+        (*r)->filhos[0] = NULL; // Como existe apenas uma única chave, não existe filho a esquerda
+        (*r)->filhos[1] = NULL; // Como existe apenas uma única chave, não existe filho a direita
+        (*r)->qtdChavesAtual++; // Incrementa quantidade total de chaves existentes na árvore
         status = 0; // Operacao realizada com sucesso
     } else {
         Bool tevePromocao;
@@ -50,13 +53,13 @@ int insere(Node **r, int chave) {
         if (tevePromocao == True){ // Se houve promocao entao criamos um novo no raiz
             //Cria um novo node interno
             Node* novaRaiz;
-            cria(&novaRaiz,(*r)->grauMinimo);
-            novaRaiz->eFolha = False;
+            cria(&novaRaiz,(*r)->grauMinimo); // Cria-se um novo nó, com nova raiz e grau mínimo definido
+            novaRaiz->eFolha = False; // Criação de um novo nó acima dos nós folha, condição deve ser falsa
 
-            novaRaiz->chaves[0] = chavePromovida;
-            novaRaiz->filhos[0] = *r;
-            novaRaiz->filhos[1] = novoNode;
-            novaRaiz->qtdChavesAtual++;
+            novaRaiz->chaves[0] = chavePromovida; // chave promovida será a primeira chave do novo nó
+            novaRaiz->filhos[0] = *r; // 
+            novaRaiz->filhos[1] = novoNode; // 
+            novaRaiz->qtdChavesAtual++; // Aumenta a quantidade de chaves totais na árvore
 
             *r = novaRaiz;
         }
