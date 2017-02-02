@@ -115,37 +115,37 @@ void divide(Node **r, int chave, int* chavePromovida, Node* nodeDireita, Node** 
     int i;
     if(chave < mediana)
     {
-        for (i = (*r)->grauMinimo; i < 2 * (*r)->grauMinimo; i++) {
-            (*novoNode)->chaves[i - (*r)->grauMinimo] = (*r)->chaves[i];
-            (*r)->chaves[i]=0;
-            (*novoNode)->filhos[i - (*r)->grauMinimo] = (*r)->filhos[i];
-            (*r)->filhos[i] = NULL;
-            (*novoNode)->qtdChavesAtual++;
-            (*r)->qtdChavesAtual--;
+        for (i = (*r)->grauMinimo; i < 2 * (*r)->grauMinimo; i++) { // ??
+            (*novoNode)->chaves[i - (*r)->grauMinimo] = (*r)->chaves[i]; // ??
+            (*r)->chaves[i]=0; 
+            (*novoNode)->filhos[i - (*r)->grauMinimo] = (*r)->filhos[i]; // ??
+            (*r)->filhos[i] = NULL; // Nó já existente não possui filhos
+            (*novoNode)->qtdChavesAtual++; // Aumenta a quantidade de chaves no nó criado
+            (*r)->qtdChavesAtual--; // Diminui a quantidade de chaves no nó já existente
         }
-        (*novoNode)->filhos[i - (*r)->grauMinimo] = (*r)->filhos[i];
-        (*r)->filhos[i] = NULL;
+        (*novoNode)->filhos[i - (*r)->grauMinimo] = (*r)->filhos[i]; // ??
+        (*r)->filhos[i] = NULL; // Nó já existente não possui filhos
         insereChave(r, chave, nodeDireita);
 
     } else{
 
-        for (i = (*r)->grauMinimo + 1; i < 2 * (*r)->grauMinimo; i++) {
-            (*novoNode)->chaves[i - ((*r)->grauMinimo + 1)] = (*r)->chaves[i];
+        for (i = (*r)->grauMinimo + 1; i < 2 * (*r)->grauMinimo; i++) { // ??
+            (*novoNode)->chaves[i - ((*r)->grauMinimo + 1)] = (*r)->chaves[i]; // ??
             (*r)->chaves[i]=0;
-            (*novoNode)->filhos[i - ((*r)->grauMinimo + 1)] = (*r)->filhos[i];
-            (*r)->filhos[i] = NULL;
-            (*novoNode)->qtdChavesAtual++;
-            (*r)->qtdChavesAtual--;
+            (*novoNode)->filhos[i - ((*r)->grauMinimo + 1)] = (*r)->filhos[i]; // ??
+            (*r)->filhos[i] = NULL; // Nó já existente não possui filhos
+            (*novoNode)->qtdChavesAtual++; // Aumenta a quantidade de chaves no nó criado
+            (*r)->qtdChavesAtual--; // Diminui a quantidade de chaves no nó já existente
         }
-        (*novoNode)->filhos[i - ((*r)->grauMinimo + 1)] = (*r)->filhos[i];
-        (*r)->filhos[i] = NULL;
+        (*novoNode)->filhos[i - ((*r)->grauMinimo + 1)] = (*r)->filhos[i]; // ??
+        (*r)->filhos[i] = NULL; // Nó já existente não possui filhos
 
         insereChave(novoNode, chave, nodeDireita);
     }
 
-    (*r)->qtdChavesAtual--;
-    *chavePromovida = (*r)->chaves[(*r)->grauMinimo];
-    (*r)->chaves[(*r)->grauMinimo] = 0;
+    (*r)->qtdChavesAtual--; // Diminui a quantidade de chaves no nó já existente 
+    *chavePromovida = (*r)->chaves[(*r)->grauMinimo]; // Aponta a chave promovida para mediana inicial do nó (??)
+    (*r)->chaves[(*r)->grauMinimo] = 0; // ??
 }
 
 
