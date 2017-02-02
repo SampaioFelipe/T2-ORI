@@ -10,10 +10,7 @@ void cria(Node **r, int grau) {
     (*r)->eFolha = True;
 }
 
-
-
-
-void insereChave(Node** r, int novaChave, const Node* novoFilho){
+void insereChave(Node** r, int novaChave, Node* novoFilho){
 
     int posicao = (*r)->qtdChavesAtual;
 
@@ -147,7 +144,6 @@ void divide(Node **r, int chave, int* chavePromovida, Node* nodeDireita, Node** 
     *chavePromovida = (*r)->chaves[(*r)->grauMinimo]; // Aponta a chave promovida para mediana do nó
     (*r)->chaves[(*r)->grauMinimo] = 0; 
 }
-
 
 int busca(Node** r, int chave, Node** pos) {
     int i=0;
